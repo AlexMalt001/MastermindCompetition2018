@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace MasterMindCompetition.Logic {//this namespace handles the shared logic of all sub-games
     internal class Code {
-        private List<Colour> guesses; //the pegs that make up the code
+        private Colour[] guesses; //the pegs that make up the code
 
-        public Code() {} //default constructor for creation of 'incomplete' codes for the players in progress guesses
+        public Code(int codeLength) {//default constructor for creation of 'incomplete' codes for the players in progress guesses
+            guesses = new Colour[codeLength];
+        } 
 
 
 
@@ -21,6 +23,6 @@ namespace MasterMindCompetition.Logic {//this namespace handles the shared logic
         }
 
         //interfaces to allow limited access to private members from public scope
-        public List<Colour> Guesses { get { return guesses; } }
+        public Colour[] Guesses { get { return guesses; } }
     }
 }
