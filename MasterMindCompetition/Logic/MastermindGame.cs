@@ -19,17 +19,23 @@ namespace MasterMindCompetition.Logic { //this namespace handles the shared logi
             hostForm = _form; //update the host form
         }
 
-        public virtual void newGame(int _maxGuesses, int _codeLength) {
+        public void runGame(int _maxGuesses, int _codeLength) {
 
             //initialise some vars
             maxGuesses = _maxGuesses;
             codeLength = _codeLength;
 
             initialiseGame();//run first stages of game (generating target code, etc)
+
+	        while (doTurn()); //repeat doTurn until game over
+
         } //create a new game
 
-
         protected abstract void initialiseGame(); //run first stages of game (generating target code, etc)
+
+	    protected abstract bool doTurn(); //return true if game to be continued, false if game over
+
+	    protected abstract void endGame(bool winLose);
 
         //properties to allow limited access to some private members from public scope
         public List<Code> GuessCodes { get { return guessCodes; } } //allow readonly access to the guessed codes

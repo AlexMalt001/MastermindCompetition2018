@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Logic\AutoCodemaker\AutoCodemakerGame.cs" />
     <Compile Include="Logic\AutoCodemaker\Codemaker.cs" />
+    <Compile Include="Logic\AutoCodemaker\IAutoCodemakerHostForm.cs" />
     <Compile Include="Logic\Code.cs" />
     <Compile Include="GUI\MasterMindForm.cs">
       <SubType>Form</SubType>
