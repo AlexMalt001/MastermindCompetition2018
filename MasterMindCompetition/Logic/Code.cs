@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MasterMindCompetition.Logic {//this namespace handles the shared logic of all sub-games
-    internal class Code {
+    public class Code {
         private Colour?[] guesses; //the pegs that make up the code. The '?' means it is nullable (ie be 'empty')
 
         public Code(int codeLength) {//default constructor for creation of 'incomplete' codes for the players in progress guesses

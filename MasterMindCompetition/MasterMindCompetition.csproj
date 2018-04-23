@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\CodeRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\CodeRow.Designer.cs">
+      <DependentUpon>CodeRow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logic\AutoCodemaker\AutoCodemakerGame.cs" />
     <Compile Include="Logic\AutoCodemaker\Codemaker.cs" />
     <Compile Include="Logic\AutoCodemaker\IAutoCodemakerHostForm.cs" />
@@ -62,6 +68,9 @@
     <EmbeddedResource Include="GUI\MasterMindForm.resx">
       <DependentUpon>MasterMindForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CodeRow.resx">
+      <DependentUpon>CodeRow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -70,6 +79,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -83,6 +93,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pegSpace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redPeg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bluePeg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orangePeg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greenPeg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YellowPeg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

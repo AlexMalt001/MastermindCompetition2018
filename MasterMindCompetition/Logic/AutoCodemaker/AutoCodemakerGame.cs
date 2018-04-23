@@ -19,7 +19,9 @@ namespace MasterMindCompetition.Logic.AutoCodemaker {//contains code for specifi
         }
 
 	    protected override bool doTurn() {
-			hostForm.nextTurn();
+		    hostForm.nextTurn();
+
+
 			Code inputCode = hostForm.getCodeFromPlayer();
 			hostForm.endPlayerInput();
 			guessCodes.Add(inputCode);
