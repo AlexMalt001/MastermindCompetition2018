@@ -61,6 +61,7 @@
     <Compile Include="GUI\MasterMindForm.Designer.cs">
       <DependentUpon>MasterMindForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\GuessResult.cs" />
     <Compile Include="Logic\ICodemakerHostForm.cs" />
     <Compile Include="Logic\MastermindGame.cs" />
     <Compile Include="Program.cs" />
@@ -111,6 +112,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\YellowPeg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackResultPeg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resultBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteResultPeg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -24,10 +24,10 @@ namespace MasterMindCompetition.GUI {
 	       
         }
 
-	    public void nextTurn() {
-			CodeRow newCodeRow = new CodeRow {
+	    public void nextTurn() { //called at the beginning of each turn
+			CodeRow newCodeRow = new CodeRow { //create a new code row control
 				Active = true };
-			newCodeRow.onClick += pegClickHandler;
+			newCodeRow.onClick += pegClickHandler;//subscribe to the event 
 		    currentCodeRow = newCodeRow;
 		    containerPanel.Controls.Add(newCodeRow);
 		    newCodeRow.Left = 0;
@@ -35,7 +35,11 @@ namespace MasterMindCompetition.GUI {
 		    currentCodeRows++;
 	    }
 
-	    public Code getCodeFromPlayer() {
+	    public void displayResults(GuessResult result) {
+			currentCodeRow.displayResults(result);
+	    }
+
+	    public Code getCodeFromPlayer() { //returns this turn's code
 		    while (!newCode) {
 			    Application.DoEvents();
 		    }
@@ -44,15 +48,15 @@ namespace MasterMindCompetition.GUI {
 			return currentCodeRow.getCode();
 	    }
 
-	    public void endPlayerInput() {
+	    public void endPlayerInput() { //stops the player from being able to input
 		    currentCodeRow.onClick -= pegClickHandler;
 	    }
 
-	    public void endGame(bool winLose) {
-		    //throw new NotImplementedException();
+	    public void endGame(bool winLose) { //called when the player wins or loses
+		    throw new NotImplementedException();
 	    }
 
-	    public void pegClickHandler(CodeRow sender, int pegNumber) {
+	    public void pegClickHandler(CodeRow sender, int pegNumber) { //called when an active peg is clicked to be changed
 		    sender.setPegColour(pegNumber, (Colour)((int)(sender.getPegColour(pegNumber)+1) % Enum.GetValues(typeof(Colour)).Length)); //set to the next colour in the enum
 		    
 	    }
@@ -62,10 +66,6 @@ namespace MasterMindCompetition.GUI {
 			game.runGame(3,4);
 
 		}
-
-	    private void Test() {
-			game.runGame(3,4);
-	    }
 
 		private void button2_Click(object sender, EventArgs e) {
 			newCode = true;

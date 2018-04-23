@@ -9,6 +9,5 @@ namespace MasterMindCompetition.Logic.AutoCodemaker {
 		
 		Code getCodeFromPlayer(); //get the player to make a new guess
 		void endPlayerInput(); //stop the player's input for this turn
-		void endGame(bool winLose); //end the game
 	}
 }

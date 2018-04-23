@@ -29,6 +29,7 @@ namespace MasterMindCompetition.Logic.AutoCodemaker {//contains code for specifi
 				endGame(true);
 				return false;//no more turns to be done
 			}
+			hostForm.displayResults(inputCode.checkGuess(target));
 
 		    return true; //the player has not guessed the code yet; more turns need to be done
 	    }

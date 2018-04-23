@@ -63,6 +63,16 @@ namespace MasterMindCompetition.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blackResultPeg {
+            get {
+                object obj = ResourceManager.GetObject("blackResultPeg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bluePeg {
             get {
                 object obj = ResourceManager.GetObject("bluePeg", resourceCulture);
@@ -106,6 +116,26 @@ namespace MasterMindCompetition.Properties {
         internal static System.Drawing.Bitmap redPeg {
             get {
                 object obj = ResourceManager.GetObject("redPeg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap resultBackground {
+            get {
+                object obj = ResourceManager.GetObject("resultBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap whiteResultPeg {
+            get {
+                object obj = ResourceManager.GetObject("whiteResultPeg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

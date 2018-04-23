@@ -9,5 +9,7 @@ namespace MasterMindCompetition.Logic { //this namespace handles the shared logi
         //requirements will be added here as they become necessary
 
 	    void nextTurn(); //start the next turn
+	    void endGame(bool winLose); //end the game
+	    void displayResults(GuessResult result); //display the calculated results in the GUI
     }
 }

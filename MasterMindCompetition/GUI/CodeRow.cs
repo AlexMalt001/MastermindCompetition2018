@@ -36,6 +36,7 @@ namespace MasterMindCompetition.GUI {
 
 		private void pegOne_Click(object sender, EventArgs e) { //when the first peg is clicked
 			onClick?.Invoke(this, 0); //its a null propogation operator. basically it only runs it if onclick != null
+			
 		}
 
 		public delegate void pegClickHandler(CodeRow sender, int pegNumber);
@@ -90,6 +91,48 @@ namespace MasterMindCompetition.GUI {
 				default: //if they try to set a peg outside the range
 					throw (new IndexOutOfRangeException("there are only 4 pegs currently"));
 			}
+		}
+
+		public void displayResults(GuessResult result) {
+
+			//WHITE PEGS
+			if (result.getRightColours() == 4) { //if there are four successes
+				resultPegFour.Visible = true; //the fourth peg is visible
+				resultPegFour.Image = Resources.whiteResultPeg; //and has a white peg
+			} else {
+				resultPegFour.Visible = false; //there are less than 4 pegs
+			}
+			if (result.getRightColours() >= 3) { //if there are three or more successes
+				resultPegThree.Visible = true; //the third peg is visible
+				resultPegThree.Image = Resources.whiteResultPeg; //and has a white peg
+			} else {
+				resultPegThree.Visible = false; //there are less than 3 pegs
+			}
+			if (result.getRightColours() >= 2) { //if there are two or more successes
+				resultPegTwo.Visible = true; //the second peg is visible
+				resultPegTwo.Image = Resources.whiteResultPeg; //and has a white peg
+			} else {
+				resultPegTwo.Visible = false; //there are less than 2 pegs
+			}
+			if (result.getRightColours() >= 1) { //if there are one or more successes
+				resultPegOne.Visible = true; //the first peg is visible
+				resultPegOne.Image = Resources.whiteResultPeg; //and has a white peg
+
+				//BLACK PEGS
+				if (result.getRightPlaces() == 4)  //if there are four successes
+					resultPegFour.Image = Resources.blackResultPeg; //black peg overwrites white peg
+				if (result.getRightPlaces() >= 3)  //if there are three or more successes
+					resultPegThree.Image = Resources.blackResultPeg; //black peg overwrites white peg
+				if (result.getRightPlaces() >= 2)  //if there are two or more successes
+					resultPegTwo.Image = Resources.blackResultPeg; //black peg overwrites white peg
+				if (result.getRightPlaces() >= 1)  //if there are one or more successes
+					resultPegOne.Image = Resources.blackResultPeg; //black peg overwrites white peg	
+
+			} else {
+				resultPegOne.Visible = false; //there are no pegs
+			}
+
+
 		}
 
 		[Description("Can the code be changed?"), Category("Data")]
