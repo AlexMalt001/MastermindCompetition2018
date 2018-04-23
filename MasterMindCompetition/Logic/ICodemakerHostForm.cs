@@ -11,6 +11,5 @@ namespace MasterMindCompetition.Logic { //this namespace handles the shared logi
 	    void nextTurn(); //start the next turn
 	    void endGame(bool winLose); //end the game
 	    void displayResults(GuessResult result); //display the calculated results in the GUI
-	    void debug_displayTarget(Code target);
     }
 }

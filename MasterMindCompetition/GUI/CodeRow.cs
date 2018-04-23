@@ -15,6 +15,8 @@ namespace MasterMindCompetition.GUI {
 	public partial class CodeRow : UserControl {
 		private Colour[] pegColours = new Colour[4];
 		private bool active = true; //whether or not the control is 'active'(can be changed by user)
+		
+
 
 		public CodeRow() {
 			InitializeComponent();
@@ -52,9 +54,9 @@ namespace MasterMindCompetition.GUI {
 			return c;
 		}
 
-		public void setCode(Code c) {
-			for (int i = 0; i < c.getCodeLength(); i++) {
-				setPegColour(i, (Colour)c.getGuesses()[i]);
+		public void setCode(Code c) { //set the code displayed on the row
+			for (int i = 0; i < c.getCodeLength(); i++) { //for each peg in the code
+				setPegColour(i, (Colour)c.getGuesses()[i]); //update the peg's display
 			}
 		}
 

@@ -19,7 +19,11 @@ namespace MasterMindCompetition.Logic { //this namespace handles the shared logi
             hostForm = _form; //update the host form
         }
 
-        public void runGame(int _maxGuesses, int _codeLength) {
+		public int getCurrentGuesses() { //external access to this variable
+			return guessCodes.Count; //return the value
+		}
+
+        public void runGame(int _maxGuesses, int _codeLength) { //the game loop
 
             //initialise some vars
             maxGuesses = _maxGuesses;
@@ -35,7 +39,7 @@ namespace MasterMindCompetition.Logic { //this namespace handles the shared logi
 
 	    protected abstract bool doTurn(); //return true if game to be continued, false if game over
 
-	    protected abstract void endGame(bool winLose);
+	    protected abstract void endGame(bool winLose); //end the game with a win or lose state
 
         //properties to allow limited access to some private members from public scope
         public List<Code> GuessCodes { get { return guessCodes; } } //allow readonly access to the guessed codes

@@ -14,50 +14,49 @@ using MasterMindCompetition.Logic.AutoCodemaker;
 
 namespace MasterMindCompetition.GUI {
     public partial class MasterMindForm : Form, IAutoCodemakerHostForm { //this must allows the display of all codemaker functions, hence the interface
-	    private CodeRow currentCodeRow;
-	    private AutoCodemakerGame game;
-	    private bool newCode = false;
-	    private int currentCodeRows = 0;
+	    private CodeRow currentCodeRow; //the latest row being worked on
+	    private AutoCodemakerGame game; //the game logic object
+	    private bool newCode = false; //whether a new code is avaliable yet
+	    private int currentCodeRows = 0; //the number of guesses so far
 
         public MasterMindForm() {
             InitializeComponent();
 	       
         }
 
-	    public void debug_displayTarget(Code target) {
-			testCodeRow.setCode(target);
-	    }
-
 	    public void nextTurn() { //called at the beginning of each turn
 			CodeRow newCodeRow = new CodeRow { //create a new code row control
 				Active = true };
 			newCodeRow.onClick += pegClickHandler;//subscribe to the event 
-		    currentCodeRow = newCodeRow;
-		    containerPanel.Controls.Add(newCodeRow);
-		    newCodeRow.Left = 0;
-		    newCodeRow.Top = 40*currentCodeRows;
-		    currentCodeRows++;
+		    currentCodeRow = newCodeRow; //update the global variable
+		    containerPanel.Controls.Add(newCodeRow); //add the new row to the container
+		    containerPanel.VerticalScroll.Value = containerPanel.VerticalScroll.Minimum; //scroll to the top. This fixes a wierd drawing issue
+		    newCodeRow.Left = 0; //align the row to the left of the container
+		    newCodeRow.Top = 40*currentCodeRows; //place the row in the correct vertical position
+		    currentCodeRows++; //there is one more row
+		    containerPanel.ScrollControlIntoView(newCodeRow); //scroll the current row into view
 	    }
 
-	    public void displayResults(GuessResult result) {
-			currentCodeRow.displayResults(result);
+	    public void displayResults(GuessResult result) { //display the results(black and white pins
+			currentCodeRow.displayResults(result); //display results on current row
 	    }
 
 	    public Code getCodeFromPlayer() { //returns this turn's code
-		    while (!newCode) {
-			    Application.DoEvents();
+		    while (!newCode) { //while there isnt a new code avaliable yet
+			    Application.DoEvents(); //keep the GUI refreshing
 		    }
 
-		    newCode = false;
-			return currentCodeRow.getCode();
+		    newCode = false; //reset this var
+			return currentCodeRow.getCode(); //return the value
 	    }
 
 	    public void endPlayerInput() { //stops the player from being able to input
-		    currentCodeRow.onClick -= pegClickHandler;
+		    currentCodeRow.onClick -= pegClickHandler; //stop listening to clicks on old rows
 	    }
 
 	    public void endGame(bool winLose) { //called when the player wins or loses
-		    MessageBox.Show("You win!");
+		    MessageBox.Show("You won in just " + game.getCurrentGuesses() + " Guesses!"); //show a cool win message
+		    Application.Exit(); //close the program
 	    }
 
 	    public void pegClickHandler(CodeRow sender, int pegNumber) { //called when an active peg is clicked to be changed
@@ -65,14 +64,14 @@ namespace MasterMindCompetition.GUI {
 		    
 	    }
 
-		private void button1_Click(object sender, EventArgs e) {
-			game = new AutoCodemakerGame(this);
-			game.runGame(3,4);
+		private void startButton_Click(object sender, EventArgs e) {
+			game = new AutoCodemakerGame(this); //make a new game
+			game.runGame(3,4); //run the game with appropriate params
 
 		}
 
-		private void button2_Click(object sender, EventArgs e) {
-			newCode = true;
+		private void submitButton_Click(object sender, EventArgs e) {
+			newCode = true; //there is now a new code avaliable
 		}
 	}
 }

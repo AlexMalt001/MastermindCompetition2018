@@ -24,9 +24,8 @@
         /// </summary>
         private void InitializeComponent() {
 			this.containerPanel = new System.Windows.Forms.Panel();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.testCodeRow = new MasterMindCompetition.GUI.CodeRow();
+			this.startButton = new System.Windows.Forms.Button();
+			this.submitButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// containerPanel
@@ -37,43 +36,35 @@
 			this.containerPanel.Size = new System.Drawing.Size(233, 314);
 			this.containerPanel.TabIndex = 7;
 			// 
-			// button1
+			// startButton
 			// 
-			this.button1.Location = new System.Drawing.Point(305, 39);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 8;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.startButton.Location = new System.Drawing.Point(251, 12);
+			this.startButton.Name = "startButton";
+			this.startButton.Size = new System.Drawing.Size(212, 50);
+			this.startButton.TabIndex = 8;
+			this.startButton.Text = "Start Game";
+			this.startButton.UseVisualStyleBackColor = true;
+			this.startButton.Click += new System.EventHandler(this.startButton_Click);
 			// 
-			// button2
+			// submitButton
 			// 
-			this.button2.Location = new System.Drawing.Point(319, 106);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 9;
-			this.button2.Text = "button2";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
-			// 
-			// testCodeRow
-			// 
-			this.testCodeRow.Active = true;
-			this.testCodeRow.Location = new System.Drawing.Point(251, 190);
-			this.testCodeRow.Name = "testCodeRow";
-			this.testCodeRow.Size = new System.Drawing.Size(200, 40);
-			this.testCodeRow.TabIndex = 10;
+			this.submitButton.Location = new System.Drawing.Point(251, 281);
+			this.submitButton.Name = "submitButton";
+			this.submitButton.Size = new System.Drawing.Size(212, 45);
+			this.submitButton.TabIndex = 9;
+			this.submitButton.Text = "Submit Code";
+			this.submitButton.UseVisualStyleBackColor = true;
+			this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
 			// 
 			// MasterMindForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(475, 338);
-			this.Controls.Add(this.testCodeRow);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.startButton);
+			this.Controls.Add(this.submitButton);
 			this.Controls.Add(this.containerPanel);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "MasterMindForm";
 			this.Text = "Mastermind";
 			this.ResumeLayout(false);
@@ -82,9 +73,8 @@
 
 		#endregion
 		private System.Windows.Forms.Panel containerPanel;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button2;
-		private CodeRow testCodeRow;
+		private System.Windows.Forms.Button startButton;
+		private System.Windows.Forms.Button submitButton;
 	}
 }
 

@@ -60,6 +60,7 @@
 			this.resultPegFour.Size = new System.Drawing.Size(11, 11);
 			this.resultPegFour.TabIndex = 12;
 			this.resultPegFour.TabStop = false;
+			this.resultPegFour.Visible = false;
 			// 
 			// resultPegThree
 			// 
@@ -70,6 +71,7 @@
 			this.resultPegThree.Size = new System.Drawing.Size(11, 11);
 			this.resultPegThree.TabIndex = 11;
 			this.resultPegThree.TabStop = false;
+			this.resultPegThree.Visible = false;
 			// 
 			// resultPegTwo
 			// 
@@ -80,6 +82,7 @@
 			this.resultPegTwo.Size = new System.Drawing.Size(11, 11);
 			this.resultPegTwo.TabIndex = 10;
 			this.resultPegTwo.TabStop = false;
+			this.resultPegTwo.Visible = false;
 			// 
 			// resultPegOne
 			// 
@@ -90,6 +93,7 @@
 			this.resultPegOne.Size = new System.Drawing.Size(11, 11);
 			this.resultPegOne.TabIndex = 9;
 			this.resultPegOne.TabStop = false;
+			this.resultPegOne.Visible = false;
 			// 
 			// resultBackgroundBox
 			// 
