@@ -16,6 +16,7 @@ namespace MasterMindCompetition.Logic.AutoCodemaker {//contains code for specifi
 
         protected override void initialiseGame() { //run first stages of game (generating target code, etc)
             target = codemaker.generateCode(codeLength); //generate a new code
+			hostForm.debug_displayTarget(target);
         }
 
 	    protected override bool doTurn() {
@@ -25,11 +26,12 @@ namespace MasterMindCompetition.Logic.AutoCodemaker {//contains code for specifi
 			Code inputCode = hostForm.getCodeFromPlayer();
 			hostForm.endPlayerInput();
 			guessCodes.Add(inputCode);
-			if (guessCodes[guessCodes.Count - 1] == target) {
-				endGame(true);
-				return false;//no more turns to be done
-			}
-			hostForm.displayResults(inputCode.checkGuess(target));
+		    GuessResult result = inputCode.checkGuess(target);
+		    if (result.getRightPlaces() == inputCode.getCodeLength()) {
+			    hostForm.endGame(true);
+			    return false;
+		    }
+			hostForm.displayResults(result);
 
 		    return true; //the player has not guessed the code yet; more turns need to be done
 	    }

@@ -24,6 +24,10 @@ namespace MasterMindCompetition.GUI {
 	       
         }
 
+	    public void debug_displayTarget(Code target) {
+			testCodeRow.setCode(target);
+	    }
+
 	    public void nextTurn() { //called at the beginning of each turn
 			CodeRow newCodeRow = new CodeRow { //create a new code row control
 				Active = true };
@@ -53,7 +57,7 @@ namespace MasterMindCompetition.GUI {
 	    }
 
 	    public void endGame(bool winLose) { //called when the player wins or loses
-		    throw new NotImplementedException();
+		    MessageBox.Show("You win!");
 	    }
 
 	    public void pegClickHandler(CodeRow sender, int pegNumber) { //called when an active peg is clicked to be changed

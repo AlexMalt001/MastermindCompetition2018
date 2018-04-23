@@ -26,6 +26,7 @@
 			this.containerPanel = new System.Windows.Forms.Panel();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
+			this.testCodeRow = new MasterMindCompetition.GUI.CodeRow();
 			this.SuspendLayout();
 			// 
 			// containerPanel
@@ -33,7 +34,7 @@
 			this.containerPanel.AutoScroll = true;
 			this.containerPanel.Location = new System.Drawing.Point(12, 12);
 			this.containerPanel.Name = "containerPanel";
-			this.containerPanel.Size = new System.Drawing.Size(195, 314);
+			this.containerPanel.Size = new System.Drawing.Size(233, 314);
 			this.containerPanel.TabIndex = 7;
 			// 
 			// button1
@@ -56,11 +57,20 @@
 			this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
+			// testCodeRow
+			// 
+			this.testCodeRow.Active = true;
+			this.testCodeRow.Location = new System.Drawing.Point(251, 190);
+			this.testCodeRow.Name = "testCodeRow";
+			this.testCodeRow.Size = new System.Drawing.Size(200, 40);
+			this.testCodeRow.TabIndex = 10;
+			// 
 			// MasterMindForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(475, 338);
+			this.Controls.Add(this.testCodeRow);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.containerPanel);
@@ -74,6 +84,7 @@
 		private System.Windows.Forms.Panel containerPanel;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
+		private CodeRow testCodeRow;
 	}
 }
 

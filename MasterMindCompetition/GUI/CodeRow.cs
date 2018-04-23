@@ -52,6 +52,12 @@ namespace MasterMindCompetition.GUI {
 			return c;
 		}
 
+		public void setCode(Code c) {
+			for (int i = 0; i < c.getCodeLength(); i++) {
+				setPegColour(i, (Colour)c.getGuesses()[i]);
+			}
+		}
+
 		public Colour getPegColour(int peg) { //get the colour of a certain peg
 			return pegColours[peg];
 		}
