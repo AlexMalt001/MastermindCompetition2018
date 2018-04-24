@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MasterMindCompetition.GUI.AutoCodemaker;
 
 namespace MasterMindCompetition.GUI {
 
@@ -20,7 +21,6 @@ namespace MasterMindCompetition.GUI {
 			gamemodeComboBox.ValueMember = "Name";
 		}
 
-		private bool closed = false;
 
 		private void startButton_Click(object sender, EventArgs e) {
 			Visible = false;

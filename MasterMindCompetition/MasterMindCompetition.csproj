@@ -45,11 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\AutoCodemakerGamemode.cs" />
-    <Compile Include="GUI\AutoCodemakerMenu.cs">
+    <Compile Include="GUI\AutoCodemaker\AutoCodemakerGamemode.cs" />
+    <Compile Include="GUI\AutoCodemaker\AutoCodemakerMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\AutoCodemakerMenu.Designer.cs">
+    <Compile Include="GUI\AutoCodemaker\AutoCodemakerMenu.Designer.cs">
       <DependentUpon>AutoCodemakerMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\CodeRow.cs">
@@ -69,10 +69,10 @@
     <Compile Include="Logic\AutoCodemaker\Codemaker.cs" />
     <Compile Include="Logic\AutoCodemaker\IAutoCodemakerHostForm.cs" />
     <Compile Include="Logic\Code.cs" />
-    <Compile Include="GUI\MasterMindForm.cs">
+    <Compile Include="GUI\AutoCodemaker\MasterMindForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\MasterMindForm.Designer.cs">
+    <Compile Include="GUI\AutoCodemaker\MasterMindForm.Designer.cs">
       <DependentUpon>MasterMindForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\GuessResult.cs" />
@@ -80,13 +80,13 @@
     <Compile Include="Logic\MastermindGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\AutoCodemakerMenu.resx">
+    <EmbeddedResource Include="GUI\AutoCodemaker\AutoCodemakerMenu.resx">
       <DependentUpon>AutoCodemakerMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\MasterMindForm.resx">
+    <EmbeddedResource Include="GUI\AutoCodemaker\MasterMindForm.resx">
       <DependentUpon>MasterMindForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\CodeRow.resx">

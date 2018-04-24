@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using MasterMindCompetition.Logic;
 using MasterMindCompetition.Logic.AutoCodemaker;
 
-namespace MasterMindCompetition.GUI {
+namespace MasterMindCompetition.GUI.AutoCodemaker {
     public partial class MasterMindForm : Form, IAutoCodemakerHostForm { //this must allows the display of all codemaker functions, hence the interface
 
 

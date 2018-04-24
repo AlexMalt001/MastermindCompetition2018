@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-namespace MasterMindCompetition.GUI {
+namespace MasterMindCompetition.GUI.AutoCodemaker {
 	public partial class AutoCodemakerMenu : Form {
 		public AutoCodemakerMenu() {
 			InitializeComponent();
