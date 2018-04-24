@@ -23,6 +23,8 @@ namespace MasterMindCompetition.Logic.AutoCodemaker {//contains code for specifi
 
 
 			Code inputCode = hostForm.getCodeFromPlayer(); //get a new guess from the player
+		    if (inputCode == null)
+			    return false;
 			hostForm.endPlayerInput(); //tell the form to stop recieving player input
 			guessCodes.Add(inputCode); //add the guess to the list of guesses
 		    GuessResult result = inputCode.checkGuess(target); //generate the results

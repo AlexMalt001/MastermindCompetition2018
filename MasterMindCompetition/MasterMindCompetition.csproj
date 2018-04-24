@@ -45,11 +45,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\AutoCodemakerGamemode.cs" />
+    <Compile Include="GUI\AutoCodemakerMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AutoCodemakerMenu.Designer.cs">
+      <DependentUpon>AutoCodemakerMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\CodeRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\CodeRow.Designer.cs">
       <DependentUpon>CodeRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\IGamemode.cs" />
+    <Compile Include="GUI\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\AutoCodemaker\AutoCodemakerGame.cs" />
     <Compile Include="Logic\AutoCodemaker\Codemaker.cs" />
@@ -66,6 +80,12 @@
     <Compile Include="Logic\MastermindGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\AutoCodemakerMenu.resx">
+      <DependentUpon>AutoCodemakerMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\MasterMindForm.resx">
       <DependentUpon>MasterMindForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -14,12 +14,18 @@ using MasterMindCompetition.Logic.AutoCodemaker;
 
 namespace MasterMindCompetition.GUI {
     public partial class MasterMindForm : Form, IAutoCodemakerHostForm { //this must allows the display of all codemaker functions, hence the interface
+
+
 	    private CodeRow currentCodeRow; //the latest row being worked on
 	    private AutoCodemakerGame game; //the game logic object
 	    private bool newCode = false; //whether a new code is avaliable yet
+	    private bool closing = false; //is the form closing
 	    private int currentCodeRows = 0; //the number of guesses so far
+	    private int maxTurns, codeLength;
 
-        public MasterMindForm() {
+        public MasterMindForm(int _maxTurns, int _codeLength) {
+	        maxTurns = _maxTurns;
+	        codeLength = _codeLength;
             InitializeComponent();
 	       
         }
@@ -42,8 +48,12 @@ namespace MasterMindCompetition.GUI {
 	    }
 
 	    public Code getCodeFromPlayer() { //returns this turn's code
-		    while (!newCode) { //while there isnt a new code avaliable yet
+		    while (!newCode && !closing) { //while there isnt a new code avaliable yet
 			    Application.DoEvents(); //keep the GUI refreshing
+		    }
+
+		    if (closing) {
+			    return null;
 		    }
 
 		    newCode = false; //reset this var
@@ -66,12 +76,18 @@ namespace MasterMindCompetition.GUI {
 
 		private void startButton_Click(object sender, EventArgs e) {
 			game = new AutoCodemakerGame(this); //make a new game
-			game.runGame(3,4); //run the game with appropriate params
+			game.runGame(maxTurns,codeLength); //run the game with appropriate params
+
+		}
+
+		private void MasterMindForm_FormClosing(object sender, FormClosingEventArgs e) {
+			Close();
+			closing = true;
 
 		}
 
 		private void submitButton_Click(object sender, EventArgs e) {
 			newCode = true; //there is now a new code avaliable
 		}
-	}
+    }
 }

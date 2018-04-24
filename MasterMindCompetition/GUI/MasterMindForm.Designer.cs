@@ -67,6 +67,7 @@
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "MasterMindForm";
 			this.Text = "Mastermind";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MasterMindForm_FormClosing);
 			this.ResumeLayout(false);
 
         }

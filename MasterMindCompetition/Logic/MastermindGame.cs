@@ -31,8 +31,9 @@ namespace MasterMindCompetition.Logic { //this namespace handles the shared logi
 
             initialiseGame();//run first stages of game (generating target code, etc)
 
-	        while (doTurn()); //repeat doTurn until game over
-
+	        while (doTurn() && (guessCodes.Count < maxGuesses || maxGuesses <= 0)); //repeat doTurn until game over
+			if(guessCodes.Count >= maxGuesses && maxGuesses > 0)
+				endGame(false);
         } //create a new game
 
         protected abstract void initialiseGame(); //run first stages of game (generating target code, etc)
