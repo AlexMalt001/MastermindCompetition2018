@@ -76,6 +76,8 @@ namespace MasterMindCompetition.GUI {
 					return Resources.orangePeg;
 				case Colour.Yellow:
 					return Resources.yellowPeg;
+				case Colour.Pink:
+					return Resources.pinkPeg;
 				default:
 					throw (new Exception("I have no idea how this happened")); //this should never be thrown
 			}

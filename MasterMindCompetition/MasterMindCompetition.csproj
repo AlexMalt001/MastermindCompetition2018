@@ -142,5 +142,8 @@
   <ItemGroup>
     <None Include="Resources\whiteResultPeg.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pinkPeg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

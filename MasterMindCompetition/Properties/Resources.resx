@@ -133,6 +133,9 @@
   <data name="pegSpace" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pegSpace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pinkPeg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pinkPeg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="redPeg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\redPeg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
