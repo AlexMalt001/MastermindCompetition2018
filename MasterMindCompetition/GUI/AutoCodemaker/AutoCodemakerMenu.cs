@@ -11,20 +11,20 @@ using System.Windows.Forms.VisualStyles;
 
 namespace MasterMindCompetition.GUI.AutoCodemaker {
 	public partial class AutoCodemakerMenu : Form {
-		public AutoCodemakerMenu() {
+		public AutoCodemakerMenu() { //CONSTRUCTOR
 			InitializeComponent();
-			ControlBox = false;
+			ControlBox = false; //hide the exit buttons
 		}
 
 		
-		public int maxGuesses = 0;
+		public int maxGuesses = 0; //values to be taken in later - needed for outside access
 		public int codeLength = 0;
 
 		private void startButton_Click(object sender, EventArgs e) {
-			maxGuesses = (int)maxGuessesBox.Value;
-			codeLength = (int) codeLengthBox.Value;
-			DialogResult  = DialogResult.OK;
-			Close();
+			maxGuesses = (int)maxGuessesBox.Value; //take in a value from the input boxes
+			codeLength = (int) codeLengthBox.Value; 
+			DialogResult  = DialogResult.OK; //the user has successfully provided input
+			Close(); //close the form
 		}
 	}
 }

@@ -21,11 +21,11 @@ namespace MasterMindCompetition.GUI.AutoCodemaker {
 	    private bool newCode = false; //whether a new code is avaliable yet
 	    private bool closing = false; //is the form closing
 	    private int currentCodeRows = 0; //the number of guesses so far
-	    private int maxTurns, codeLength;
+	    private int maxTurns, codeLength; //the number of turns the player is allowed and the length of a code
 
-        public MasterMindForm(int _maxTurns, int _codeLength) {
-	        maxTurns = _maxTurns;
-	        codeLength = _codeLength;
+        public MasterMindForm(int _maxTurns, int _codeLength) { //CONSTRUCTOR
+	        maxTurns = _maxTurns; //take in the max number of turns needed to win
+	        codeLength = _codeLength; //take in the code length TODO:IMPLEMENT THIS PROPERLY
             InitializeComponent();
 	       
         }
@@ -52,8 +52,8 @@ namespace MasterMindCompetition.GUI.AutoCodemaker {
 			    Application.DoEvents(); //keep the GUI refreshing
 		    }
 
-		    if (closing) {
-			    return null;
+		    if (closing) { //if the form is about to close
+			    return null; //this causes the game logic to unceremoniously end itself ;(
 		    }
 
 		    newCode = false; //reset this var
@@ -81,8 +81,8 @@ namespace MasterMindCompetition.GUI.AutoCodemaker {
 		}
 
 		private void MasterMindForm_FormClosing(object sender, FormClosingEventArgs e) {
-			Close();
-			closing = true;
+			Close(); //close the form
+			closing = true; //tell it to quit the input wait loop and finish all logic
 
 		}
 

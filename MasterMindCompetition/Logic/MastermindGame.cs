@@ -32,8 +32,9 @@ namespace MasterMindCompetition.Logic { //this namespace handles the shared logi
             initialiseGame();//run first stages of game (generating target code, etc)
 
 	        while (doTurn() && (guessCodes.Count < maxGuesses || maxGuesses <= 0)); //repeat doTurn until game over
-			if(guessCodes.Count >= maxGuesses && maxGuesses > 0)
-				endGame(false);
+			if(guessCodes.Count >= maxGuesses && maxGuesses > 0) //if the player has expended their avaliable turns
+				endGame(false);//tell the form to display its loss message
+			//a message is not displayed if it stops due to 'unnatural causes' (the input code was null. this normally means the form wants to close)
         } //create a new game
 
         protected abstract void initialiseGame(); //run first stages of game (generating target code, etc)
