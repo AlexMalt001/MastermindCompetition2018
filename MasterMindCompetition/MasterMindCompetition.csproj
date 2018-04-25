@@ -64,7 +64,7 @@
     <Compile Include="GUI\CodeRow.Designer.cs">
       <DependentUpon>CodeRow.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\IGamemode.cs" />
+    <Compile Include="GUI\Gamemode.cs" />
     <Compile Include="GUI\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>

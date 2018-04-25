@@ -14,7 +14,7 @@ namespace MasterMindCompetition.GUI {
 	
 
 	public partial class MainMenuForm : Form {
-		static readonly List<IGamemode> gamemodes = new List<IGamemode>{new AutoCodemakerGamemode()};
+		static readonly List<Gamemode> gamemodes = new List<Gamemode>{new AutoCodemakerGamemode()};
 		public MainMenuForm() { //CONSTRUCTOR
 			InitializeComponent();
 			gamemodeComboBox.DataSource = gamemodes; //set the combobox to look at the list of all gamemodes
@@ -24,7 +24,7 @@ namespace MasterMindCompetition.GUI {
 
 		private void startButton_Click(object sender, EventArgs e) { //when the user hits go
 			Visible = false;//hide the main menu
-			((IGamemode) gamemodeComboBox.SelectedItem).runGamemode(); //run the selected gamemode
+			((Gamemode) gamemodeComboBox.SelectedItem).runGamemode(); //run the selected gamemode
 			//the above line halts this sequence until the user quits the gamemode
 			Visible = true;//bring the main menu back
 		}
