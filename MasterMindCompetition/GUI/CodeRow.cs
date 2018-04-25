@@ -41,11 +41,11 @@ namespace MasterMindCompetition.GUI {
 				peg.Colour = Colour.Red; //the default colour is red
 		}
 
-		private void onPegClick(Peg sender, int index) {//when the peg tells the row its been clicked
-			onClick?.Invoke(this, index); //the row says its been clicked
+		private void onPegClick(Peg sender, int index, bool leftClick) {//when the peg tells the row its been clicked
+			onClick?.Invoke(this, index, leftClick); //the row says its been clicked
 		}
 
-		public delegate void PegClickHandler(CodeRow sender, int pegNumber);
+		public delegate void PegClickHandler(CodeRow sender, int pegNumber, bool leftClick);
 		public event PegClickHandler onClick;//triggered when a peg is clicked (likely to change it. this is handled in the main form)
 
 

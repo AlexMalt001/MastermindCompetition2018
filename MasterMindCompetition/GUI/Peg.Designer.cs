@@ -1,4 +1,7 @@
-﻿namespace MasterMindCompetition.GUI {
+﻿using System;
+using System.Windows.Forms;
+
+namespace MasterMindCompetition.GUI {
 	partial class Peg {
 		/// <summary> 
 		/// Required designer variable.

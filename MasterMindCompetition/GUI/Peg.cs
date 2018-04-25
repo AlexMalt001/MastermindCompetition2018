@@ -13,7 +13,7 @@ using MasterMindCompetition.Properties;
 namespace MasterMindCompetition.GUI {
 	public partial class Peg : UserControl {
 		public int index;
-		public delegate void pegClickHandler(Peg sender, int pegNumber);
+		public delegate void pegClickHandler(Peg sender, int pegNumber, bool leftClick);
 		public event pegClickHandler onClick;//triggered when a peg is clicked (likely to change it. this is handled in the main form)
 		private Colour colour = Colour.Red; //red is the default colour
 		public Colour Colour {
@@ -50,7 +50,7 @@ namespace MasterMindCompetition.GUI {
 		}
 
 		private void pegOne_Click(object sender, EventArgs e) {
-			onClick?.Invoke(this, index);
+			onClick?.Invoke(this, index, ((MouseEventArgs)e).Button == MouseButtons.Left);
 		}
 	}
 }

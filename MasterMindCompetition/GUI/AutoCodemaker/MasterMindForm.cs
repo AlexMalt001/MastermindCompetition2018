@@ -70,9 +70,19 @@ namespace MasterMindCompetition.GUI.AutoCodemaker {
 		    Application.Exit(); //close the program
 	    }
 
-	    public void pegClickHandler(CodeRow sender, int pegNumber) { //called when an active peg is clicked to be changed
-		    sender.setPegColour(pegNumber, (Colour)((int)(sender.getPegColour(pegNumber)+1) % Enum.GetValues(typeof(Colour)).Length)); //set to the next colour in the enum
-		    
+	    public void pegClickHandler(CodeRow sender, int pegNumber, bool leftClick) { //called when an active peg is clicked to be changed
+		    if (leftClick)
+			    sender.setPegColour(pegNumber,
+				    (Colour) ((int) (sender.getPegColour(pegNumber) + 1) %
+				              Enum.GetValues(typeof(Colour)).Length)); //set to the next colour in the enum
+		    else {
+			    int length = Enum.GetValues(typeof(Colour)).Length; //number of members of the enum
+				int value = (int)(sender.getPegColour(pegNumber) - 1) %
+				            length; //take one off and mod to ensure get within allowed range
+			    value = value < 0 ? value + length: value; //c# mod is weird and gives -ve nos. this prevents that
+			    sender.setPegColour(pegNumber,(Colour)value); //set to the previous colour in the enum
+			}
+			    
 	    }
 
 		private void startButton_Click(object sender, EventArgs e) {
