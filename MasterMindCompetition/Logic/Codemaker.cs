@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MasterMindCompetition.Logic.AutoCodemaker { //contains code for specifically the auto-codemaker sub game
+
+namespace MasterMindCompetition.Logic { //contains code for specifically the auto-codemaker sub game
 	internal class Codemaker {
 		public Code generateCode(int codeLength) { //generate a new code to be guessed by the player
 			Random rng = new Random(); //create a random number generator (RNG)

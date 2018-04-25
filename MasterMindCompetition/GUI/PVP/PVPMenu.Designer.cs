@@ -1,5 +1,5 @@
-﻿namespace MasterMindCompetition.GUI.AutoCodemaker {
-	partial class AutoCodemakerMenu {
+﻿namespace MasterMindCompetition.GUI.PVP {
+	partial class PVPMenu {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -74,7 +74,7 @@
 			this.startButton.UseVisualStyleBackColor = true;
 			this.startButton.Click += new System.EventHandler(this.startButton_Click);
 			// 
-			// AutoCodemakerMenu
+			// PVPMenu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -85,7 +85,8 @@
 			this.Controls.Add(this.maxGuessesLabel);
 			this.Controls.Add(this.maxGuessesBox);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-			this.Name = "AutoCodemakerMenu";
+			this.MaximizeBox = false;
+			this.Name = "PVPMenu";
 			this.Text = "Auto-Codemaker Menu";
 			((System.ComponentModel.ISupportInitialize)(this.maxGuessesBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.codeLengthBox)).EndInit();

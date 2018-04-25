@@ -17,6 +17,7 @@ namespace MasterMindCompetition.Logic { //this namespace handles the shared logi
 
         protected MastermindGame(IMastermindHostForm _form) { //initialise the game
             hostForm = _form; //update the host form
+			
         }
 
 		public int getCurrentGuesses() { //external access to this variable

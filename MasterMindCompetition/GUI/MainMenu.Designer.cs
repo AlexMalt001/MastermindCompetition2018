@@ -63,6 +63,8 @@
 			this.Controls.Add(this.startButton);
 			this.Controls.Add(this.gamemodeLabel);
 			this.Controls.Add(this.gamemodeComboBox);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.MaximizeBox = false;
 			this.Name = "MainMenuForm";
 			this.Text = "Main Menu";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenuForm_FormClosing);

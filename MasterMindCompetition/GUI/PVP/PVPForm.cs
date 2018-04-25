@@ -10,17 +10,17 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MasterMindCompetition.Logic;
-using MasterMindCompetition.Logic.AutoCodemaker;
+using MasterMindCompetition.Logic.PVP;
 
-namespace MasterMindCompetition.GUI.AutoCodemaker {
-    public partial class AutoCodemakerForm : MastermindForm, IAutoCodemakerHostForm { //this must allows the display of all codemaker functions, hence the interface
+namespace MasterMindCompetition.GUI.PVP {
+    public partial class PVPForm : MastermindForm, IPVPHostForm { //this must allows the display of all codemaker functions, hence the interface
 
 
 	    
-	    private new AutoCodemakerGame game; //the game logic object
+	    private new PVPGame game; //the game logic object
 	    
 
-        public AutoCodemakerForm(int _maxTurns, int _codeLength) : base(_maxTurns,_codeLength){ //CONSTRUCTOR
+        public PVPForm(int _maxTurns, int _codeLength) : base(_maxTurns,_codeLength){ //CONSTRUCTOR
             InitializeComponent();
 	       
         }
@@ -28,6 +28,13 @@ namespace MasterMindCompetition.GUI.AutoCodemaker {
 	    public override void nextTurn() { //called at the beginning of each turn
 		    base.nextTurn();
 			currentCodeRow.onClick += pegClickHandler;//subscribe to the event 
+	    }
+
+	    public Code getCodeFromCodemaker() { //get the codemaker to make a new code
+		    MessageBox.Show("The Codemaker must now enter a code, dont let the codebreaker look!"); //warn the players to not let the codebreaker see the code
+		    CodemakerEntry ce = new CodemakerEntry(codeLength); //create a new code entry form
+		    ce.ShowDialog(); //and show it as a dialog
+		    return ce.getCode(); //then return the code that was entered in it
 	    }
 
 	    public Code getCodeFromPlayer() { //returns this turn's code
@@ -49,7 +56,7 @@ namespace MasterMindCompetition.GUI.AutoCodemaker {
 
 	    public override void endGame(bool winLose) { //called when the player wins or loses
 		    MessageBox.Show("You won in just " + game.getCurrentGuesses() + " Guesses!"); //show a cool win message
-		    Close(); //close the form(return to main menu)
+		    Close(); //close the program
 	    }
 
 	    private void pegClickHandler(CodeRow sender, int pegNumber, bool leftClick) { //called when an active peg is clicked to be changed
@@ -68,7 +75,7 @@ namespace MasterMindCompetition.GUI.AutoCodemaker {
 	    }
 
 		protected override void startButton_Click(object sender, EventArgs e) {
-			game = new AutoCodemakerGame(this); //make a new game
+			game = new PVPGame(this); //make a new game
 			base.game = game; //give the base class the new game as well
 			game.runGame(maxTurns,codeLength); //run the game with appropriate params
 

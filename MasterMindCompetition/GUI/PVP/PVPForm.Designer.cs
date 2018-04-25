@@ -1,5 +1,5 @@
-﻿namespace MasterMindCompetition.GUI {
-    abstract partial class MastermindForm {
+﻿namespace MasterMindCompetition.GUI.PVP {
+    partial class PVPForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -56,7 +56,7 @@
 			this.submitButton.UseVisualStyleBackColor = true;
 			this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
 			// 
-			// MastermindForm
+			// AutoCodemakerForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -65,10 +65,8 @@
 			this.Controls.Add(this.submitButton);
 			this.Controls.Add(this.containerPanel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-			this.MaximizeBox = false;
-			this.Name = "MastermindForm";
+			this.Name = "AutoCodemakerForm";
 			this.Text = "Mastermind";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MasterMindForm_FormClosing);
 			this.ResumeLayout(false);
 
         }
