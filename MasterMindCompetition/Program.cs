@@ -14,7 +14,8 @@ namespace MasterMindCompetition {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MasterMindForm());
+	        new GUI.MainMenuForm().Show(); //show a main menu form. doing it this way means the whole program wont quit when the form quits
+			Application.Run(); //start the message loop, etc
         }
     }
 }
