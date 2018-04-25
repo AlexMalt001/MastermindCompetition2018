@@ -36,7 +36,8 @@ namespace MasterMindCompetition.GUI.AutoCodemaker {
 			newCodeRow.onClick += pegClickHandler;//subscribe to the event 
 		    currentCodeRow = newCodeRow; //update the global variable
 		    containerPanel.Controls.Add(newCodeRow); //add the new row to the container
-		    containerPanel.VerticalScroll.Value = containerPanel.VerticalScroll.Minimum; //scroll to the top. This fixes a wierd drawing issue
+		    containerPanel.VerticalScroll.Value = containerPanel.VerticalScroll.Minimum; //scroll to the top. This fixes a weird drawing issue
+		    containerPanel.HorizontalScroll.Value = containerPanel.HorizontalScroll.Minimum; //scroll to the far left. this also fixes a weird drawing issue
 		    newCodeRow.Left = 0; //align the row to the left of the container
 		    newCodeRow.Top = 40*currentCodeRows; //place the row in the correct vertical position
 		    currentCodeRows++; //there is one more row
