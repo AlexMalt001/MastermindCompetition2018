@@ -15,6 +15,7 @@ namespace MasterMindCompetition.GUI.PVP {
 		private CodeRow codeRow; //the code row the codemaker uses
 		public CodemakerEntry(int codeLength) { //allows the codemaker to enter a code
 			InitializeComponent();
+			rowContainer.AutoScroll = true; //allow the user to scroll if their code length is too wide for the window
 			ControlBox = false; //hide exit buttons
 			codeRow = new CodeRow(codeLength); //create a new coderow...
 			rowContainer.Controls.Add(codeRow); //and add it to the container
