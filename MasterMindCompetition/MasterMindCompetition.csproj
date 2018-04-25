@@ -84,7 +84,7 @@
       <DependentUpon>Peg.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\AutoCodemaker\AutoCodemakerGame.cs" />
-    <Compile Include="Logic\AutoCodemaker\Codemaker.cs" />
+    <Compile Include="Logic\Codemaker.cs" />
     <Compile Include="Logic\AutoCodemaker\IAutoCodemakerHostForm.cs" />
     <Compile Include="Logic\Code.cs" />
     <Compile Include="GUI\AutoCodemaker\AutoCodemakerForm.cs">
@@ -96,6 +96,8 @@
     <Compile Include="Logic\GuessResult.cs" />
     <Compile Include="Logic\IMastermindHostForm.cs" />
     <Compile Include="Logic\MastermindGame.cs" />
+    <Compile Include="Logic\PVP\PVPGame.cs" />
+    <Compile Include="Logic\PVP\IPVPHostForm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\MastermindForm.resx">
