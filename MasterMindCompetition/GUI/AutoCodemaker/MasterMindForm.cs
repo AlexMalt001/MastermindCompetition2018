@@ -31,7 +31,7 @@ namespace MasterMindCompetition.GUI.AutoCodemaker {
         }
 
 	    public void nextTurn() { //called at the beginning of each turn
-			CodeRow newCodeRow = new CodeRow { //create a new code row control
+			CodeRow newCodeRow = new CodeRow (codeLength) { //create a new code row control
 				Active = true };
 			newCodeRow.onClick += pegClickHandler;//subscribe to the event 
 		    currentCodeRow = newCodeRow; //update the global variable

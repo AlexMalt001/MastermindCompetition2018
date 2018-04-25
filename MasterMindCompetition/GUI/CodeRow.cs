@@ -13,44 +13,37 @@ using MasterMindCompetition.Properties;
 
 namespace MasterMindCompetition.GUI {
 	public partial class CodeRow : UserControl {
-		private Colour[] pegColours = new Colour[4];
 		private bool active = true; //whether or not the control is 'active'(can be changed by user)
+		private int codeLength;
+		private List<Peg> pegs = new List<Peg>();
 		
 
 
-		public CodeRow() {
+		public CodeRow(int _codeLength) {
 			InitializeComponent();
-			for (int i = 0; i < pegColours.Length; i++) //for each peg space
-				pegColours[i] = Colour.Red; //the default colour is red
+			codeLength = _codeLength;
+			for (int i = 0; i<codeLength; i++) {
+				pegs.Add(new Peg(i));
+				pegs[i].Location = new Point(40 * i, 0);
+				pegs[i].Parent = this;
+				pegs[i].onClick += onPegClick;
+			}
+			foreach (Peg peg in pegs)
+				peg.Colour = Colour.Red; //the default colour is red
 		}
 
-		private void pegTwo_Click(object sender, EventArgs e) { //when the second peg is clicked
-			onClick?.Invoke(this, 1); //its a null propogation operator. basically it only runs it if onclick != null
+		private void onPegClick(Peg sender, int index) {//when the peg tells the row its been clicked
+			onClick?.Invoke(this, index); //the row says its been clicked
 		}
 
-		private void pegThree_Click(object sender, EventArgs e) { //when the third peg is clicked
-			onClick?.Invoke(this, 2); //its a null propogation operator. basically it only runs it if onclick != null
-		}
-
-		private void pegFour_Click(object sender, EventArgs e) { //when the fourth peg is clicked
-			onClick?.Invoke(this, 3); //its a null propogation operator. basically it only runs it if onclick != null
-		}
-
-		private void pegOne_Click(object sender, EventArgs e) { //when the first peg is clicked
-			onClick?.Invoke(this, 0); //its a null propogation operator. basically it only runs it if onclick != null
-			
-		}
-
-		public delegate void pegClickHandler(CodeRow sender, int pegNumber);
-		public event pegClickHandler onClick;//triggered when a peg is clicked (likely to change it. this is handled in the main form)
+		public delegate void PegClickHandler(CodeRow sender, int pegNumber);
+		public event PegClickHandler onClick;//triggered when a peg is clicked (likely to change it. this is handled in the main form)
 
 
 		public Code getCode() { //get the whole code represented by the CodeRow
-			Code c = new Code(4); //this is hardcoded and therefore bad. TODO:fix
-			c.addPeg(pegColours[0], 0); //setup the first peg
-			c.addPeg(pegColours[1], 1); //setup the second peg
-			c.addPeg(pegColours[2], 2); //setup the third peg
-			c.addPeg(pegColours[3], 3); //setup the fourth peg
+			Code c = new Code(codeLength); //make a new code
+			for (int i = 0; i < codeLength; i++) //for each peg
+				c.addPeg(pegs[i].Colour, i); //add the peg to the code
 			return c;
 		}
 
@@ -61,56 +54,23 @@ namespace MasterMindCompetition.GUI {
 		}
 
 		public Colour getPegColour(int peg) { //get the colour of a certain peg
-			return pegColours[peg];
+			return pegs[peg].Colour;
 		}
 
-		private Bitmap getImageForColour(Colour c) { //get the image relating to each colour
-			switch (c) {
-				case Colour.Green:
-					return Resources.greenPeg;
-				case Colour.Red:
-					return Resources.redPeg;
-				case Colour.Blue:
-					return Resources.bluePeg;
-				case Colour.Orange:
-					return Resources.orangePeg;
-				case Colour.Yellow:
-					return Resources.yellowPeg;
-				case Colour.Pink:
-					return Resources.pinkPeg;
-				default:
-					throw (new Exception("I have no idea how this happened")); //this should never be thrown
-			}
-		}
+		
 
 		public void setPegColour(int pegIndex, Colour colour) { //set a peg's colour
-			pegColours[pegIndex] = colour; //update the representation of the gui
-			switch (pegIndex) { //update the gui
-				case 0:
-					pegOne.Image = getImageForColour(colour);
-					break;
-				case 1:
-					pegTwo.Image = getImageForColour(colour);
-					break;
-				case 2:
-					pegThree.Image = getImageForColour(colour);
-					break;
-				case 3:
-					pegFour.Image = getImageForColour(colour);
-					break;
-				default: //if they try to set a peg outside the range
-					throw (new IndexOutOfRangeException("there are only 4 pegs currently"));
-			}
+			pegs[pegIndex].Colour = colour;
 		}
 
 		public void displayResults(GuessResult result) {
 
 			//WHITE PEGS
-			if (result.getRightColours() == 4) { //if there are four successes
+			if (result.getRightColours() == codeLength) { //if there are four successes
 				resultPegFour.Visible = true; //the fourth peg is visible
 				resultPegFour.Image = Resources.whiteResultPeg; //and has a white peg
 			} else {
-				resultPegFour.Visible = false; //there are less than 4 pegs
+				resultPegFour.Visible = false; //there are less than {codeLength} pegs
 			}
 			if (result.getRightColours() >= 3) { //if there are three or more successes
 				resultPegThree.Visible = true; //the third peg is visible
