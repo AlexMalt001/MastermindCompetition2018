@@ -14,7 +14,7 @@ namespace MasterMindCompetition.Logic.PVP {//contains code for specifically the 
         }
 
         protected override void initialiseGame() { //run first stages of game (generating target code, etc)
-	        target = hostForm.getCodeFromPlayer();//ask the codemaker for a new code
+	        target = hostForm.getCodeFromCodemaker();//ask the codemaker for a new code
         }
 
 	    protected override bool doTurn() { //run through one turn
