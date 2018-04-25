@@ -74,7 +74,7 @@
 			this.startButton.UseVisualStyleBackColor = true;
 			this.startButton.Click += new System.EventHandler(this.startButton_Click);
 			// 
-			// AutoCodemakerMenu
+			// PVPMenu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,7 +84,9 @@
 			this.Controls.Add(this.codeLengthLabel);
 			this.Controls.Add(this.maxGuessesLabel);
 			this.Controls.Add(this.maxGuessesBox);
-			this.Name = "AutoCodemakerMenu";
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.MaximizeBox = false;
+			this.Name = "PVPMenu";
 			this.Text = "Auto-Codemaker Menu";
 			((System.ComponentModel.ISupportInitialize)(this.maxGuessesBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.codeLengthBox)).EndInit();

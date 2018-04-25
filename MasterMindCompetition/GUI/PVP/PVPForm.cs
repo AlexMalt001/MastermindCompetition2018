@@ -30,8 +30,11 @@ namespace MasterMindCompetition.GUI.PVP {
 			currentCodeRow.onClick += pegClickHandler;//subscribe to the event 
 	    }
 
-	    public Code getCodeFromCodemaker() {
-		    throw new NotImplementedException();
+	    public Code getCodeFromCodemaker() { //get the codemaker to make a new code
+		    MessageBox.Show("The Codemaker must now enter a code, dont let the codebreaker look!"); //warn the players to not let the codebreaker see the code
+		    CodemakerEntry ce = new CodemakerEntry(codeLength); //create a new code entry form
+		    ce.ShowDialog(); //and show it as a dialog
+		    return ce.getCode(); //then return the code that was entered in it
 	    }
 
 	    public Code getCodeFromPlayer() { //returns this turn's code
@@ -53,7 +56,7 @@ namespace MasterMindCompetition.GUI.PVP {
 
 	    public override void endGame(bool winLose) { //called when the player wins or loses
 		    MessageBox.Show("You won in just " + game.getCurrentGuesses() + " Guesses!"); //show a cool win message
-		    Application.Exit(); //close the program
+		    Close(); //close the program
 	    }
 
 	    private void pegClickHandler(CodeRow sender, int pegNumber, bool leftClick) { //called when an active peg is clicked to be changed

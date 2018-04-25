@@ -49,7 +49,7 @@ namespace MasterMindCompetition.GUI.AutoCodemaker {
 
 	    public override void endGame(bool winLose) { //called when the player wins or loses
 		    MessageBox.Show("You won in just " + game.getCurrentGuesses() + " Guesses!"); //show a cool win message
-		    Application.Exit(); //close the program
+		    Close(); //close the form(return to main menu)
 	    }
 
 	    private void pegClickHandler(CodeRow sender, int pegNumber, bool leftClick) { //called when an active peg is clicked to be changed

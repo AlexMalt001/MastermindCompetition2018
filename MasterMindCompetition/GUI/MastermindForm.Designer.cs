@@ -56,7 +56,7 @@
 			this.submitButton.UseVisualStyleBackColor = true;
 			this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
 			// 
-			// AutoCodemakerForm
+			// MastermindForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -65,7 +65,8 @@
 			this.Controls.Add(this.submitButton);
 			this.Controls.Add(this.containerPanel);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-			this.Name = "AutoCodemakerForm";
+			this.MaximizeBox = false;
+			this.Name = "MastermindForm";
 			this.Text = "Mastermind";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MasterMindForm_FormClosing);
 			this.ResumeLayout(false);

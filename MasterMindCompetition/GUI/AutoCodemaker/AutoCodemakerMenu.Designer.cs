@@ -84,6 +84,7 @@
 			this.Controls.Add(this.codeLengthLabel);
 			this.Controls.Add(this.maxGuessesLabel);
 			this.Controls.Add(this.maxGuessesBox);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "AutoCodemakerMenu";
 			this.Text = "Auto-Codemaker Menu";
 			((System.ComponentModel.ISupportInitialize)(this.maxGuessesBox)).EndInit();
