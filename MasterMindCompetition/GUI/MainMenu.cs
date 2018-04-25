@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MasterMindCompetition.GUI.AutoCodemaker;
+using MasterMindCompetition.GUI.PVP;
 
 namespace MasterMindCompetition.GUI {
 
 	
 
 	public partial class MainMenuForm : Form {
-		static readonly List<Gamemode> gamemodes = new List<Gamemode>{new AutoCodemakerGamemode()};
+		static readonly List<Gamemode> gamemodes = new List<Gamemode>{new AutoCodemakerGamemode(), new PVPGamemode()};
 		public MainMenuForm() { //CONSTRUCTOR
 			InitializeComponent();
 			gamemodeComboBox.DataSource = gamemodes; //set the combobox to look at the list of all gamemodes

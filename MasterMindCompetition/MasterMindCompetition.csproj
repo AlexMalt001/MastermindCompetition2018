@@ -58,10 +58,23 @@
     <Compile Include="GUI\AutoCodemaker\AutoCodemakerMenu.Designer.cs">
       <DependentUpon>AutoCodemakerMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\AutoCodemaker\ResultDisplay.cs">
+    <Compile Include="GUI\PVP\CodemakerEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PVP\CodemakerEntry.Designer.cs">
+      <DependentUpon>CodemakerEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PVP\PVPMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PVP\PVPMenu.Designer.cs">
+      <DependentUpon>PVPMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\PVP\PVPGamemode.cs" />
+    <Compile Include="GUI\ResultDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\AutoCodemaker\ResultDisplay.Designer.cs">
+    <Compile Include="GUI\ResultDisplay.Designer.cs">
       <DependentUpon>ResultDisplay.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\CodeRow.cs">
@@ -83,8 +96,14 @@
     <Compile Include="GUI\Peg.Designer.cs">
       <DependentUpon>Peg.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\PVP\PVPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PVP\PVPForm.Designer.cs">
+      <DependentUpon>PVPForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logic\AutoCodemaker\AutoCodemakerGame.cs" />
-    <Compile Include="Logic\AutoCodemaker\Codemaker.cs" />
+    <Compile Include="Logic\Codemaker.cs" />
     <Compile Include="Logic\AutoCodemaker\IAutoCodemakerHostForm.cs" />
     <Compile Include="Logic\Code.cs" />
     <Compile Include="GUI\AutoCodemaker\AutoCodemakerForm.cs">
@@ -96,6 +115,8 @@
     <Compile Include="Logic\GuessResult.cs" />
     <Compile Include="Logic\IMastermindHostForm.cs" />
     <Compile Include="Logic\MastermindGame.cs" />
+    <Compile Include="Logic\PVP\PVPGame.cs" />
+    <Compile Include="Logic\PVP\IPVPHostForm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\MastermindForm.resx">
@@ -104,7 +125,13 @@
     <EmbeddedResource Include="GUI\AutoCodemaker\AutoCodemakerMenu.resx">
       <DependentUpon>AutoCodemakerMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\AutoCodemaker\ResultDisplay.resx">
+    <EmbeddedResource Include="GUI\PVP\CodemakerEntry.resx">
+      <DependentUpon>CodemakerEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PVP\PVPMenu.resx">
+      <DependentUpon>PVPMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ResultDisplay.resx">
       <DependentUpon>ResultDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainMenu.resx">
@@ -118,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Peg.resx">
       <DependentUpon>Peg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PVP\PVPForm.resx">
+      <DependentUpon>PVPForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

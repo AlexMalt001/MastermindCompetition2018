@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using MasterMindCompetition.Logic;
 using MasterMindCompetition.Properties;
 
-namespace MasterMindCompetition.GUI.AutoCodemaker {
+namespace MasterMindCompetition.GUI {
 	public partial class ResultDisplay : UserControl {
 
 		public ResultDisplay() {

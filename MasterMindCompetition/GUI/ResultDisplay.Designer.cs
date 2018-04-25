@@ -1,4 +1,4 @@
-﻿namespace MasterMindCompetition.GUI.AutoCodemaker {
+﻿namespace MasterMindCompetition.GUI {
 	partial class ResultDisplay {
 		/// <summary> 
 		/// Required designer variable.
