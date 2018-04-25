@@ -52,6 +52,12 @@
     <Compile Include="GUI\AutoCodemaker\AutoCodemakerMenu.Designer.cs">
       <DependentUpon>AutoCodemakerMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\AutoCodemaker\ResultDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\AutoCodemaker\ResultDisplay.Designer.cs">
+      <DependentUpon>ResultDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\CodeRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\AutoCodemaker\AutoCodemakerMenu.resx">
       <DependentUpon>AutoCodemakerMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AutoCodemaker\ResultDisplay.resx">
+      <DependentUpon>ResultDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>

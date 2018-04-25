@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MasterMindCompetition.GUI.AutoCodemaker;
 using MasterMindCompetition.Logic;
 using MasterMindCompetition.Properties;
 
@@ -16,6 +17,7 @@ namespace MasterMindCompetition.GUI {
 		private bool active = true; //whether or not the control is 'active'(can be changed by user)
 		private int codeLength;
 		private List<Peg> pegs = new List<Peg>();
+		private List<ResultDisplay> resultDisplays = new List<ResultDisplay>();
 		
 
 
@@ -28,6 +30,13 @@ namespace MasterMindCompetition.GUI {
 				pegs[i].Parent = this;
 				pegs[i].onClick += onPegClick;
 			}
+			for (int i = 0; i < (int)Math.Ceiling((double)codeLength / 4); i++) {
+				resultDisplays.Add(new ResultDisplay());
+				resultDisplays[i].Location = new Point(40 * (codeLength + i), 0);
+				resultDisplays[i].Parent = this;
+			}
+
+			Size = new Size(40 * codeLength + 40 * (int)Math.Ceiling((double) codeLength / 4), 40);
 			foreach (Peg peg in pegs)
 				peg.Colour = Colour.Red; //the default colour is red
 		}
@@ -44,6 +53,7 @@ namespace MasterMindCompetition.GUI {
 			Code c = new Code(codeLength); //make a new code
 			for (int i = 0; i < codeLength; i++) //for each peg
 				c.addPeg(pegs[i].Colour, i); //add the peg to the code
+			
 			return c;
 		}
 
@@ -63,47 +73,22 @@ namespace MasterMindCompetition.GUI {
 			pegs[pegIndex].Colour = colour;
 		}
 
-		public void displayResults(GuessResult result) {
-
-			//WHITE PEGS
-			if (result.getRightColours() == codeLength) { //if there are four successes
-				resultPegFour.Visible = true; //the fourth peg is visible
-				resultPegFour.Image = Resources.whiteResultPeg; //and has a white peg
-			} else {
-				resultPegFour.Visible = false; //there are less than {codeLength} pegs
-			}
-			if (result.getRightColours() >= 3) { //if there are three or more successes
-				resultPegThree.Visible = true; //the third peg is visible
-				resultPegThree.Image = Resources.whiteResultPeg; //and has a white peg
-			} else {
-				resultPegThree.Visible = false; //there are less than 3 pegs
-			}
-			if (result.getRightColours() >= 2) { //if there are two or more successes
-				resultPegTwo.Visible = true; //the second peg is visible
-				resultPegTwo.Image = Resources.whiteResultPeg; //and has a white peg
-			} else {
-				resultPegTwo.Visible = false; //there are less than 2 pegs
-			}
-			if (result.getRightColours() >= 1) { //if there are one or more successes
-				resultPegOne.Visible = true; //the first peg is visible
-				resultPegOne.Image = Resources.whiteResultPeg; //and has a white peg
-
-				//BLACK PEGS
-				if (result.getRightPlaces() == 4)  //if there are four successes
-					resultPegFour.Image = Resources.blackResultPeg; //black peg overwrites white peg
-				if (result.getRightPlaces() >= 3)  //if there are three or more successes
-					resultPegThree.Image = Resources.blackResultPeg; //black peg overwrites white peg
-				if (result.getRightPlaces() >= 2)  //if there are two or more successes
-					resultPegTwo.Image = Resources.blackResultPeg; //black peg overwrites white peg
-				if (result.getRightPlaces() >= 1)  //if there are one or more successes
-					resultPegOne.Image = Resources.blackResultPeg; //black peg overwrites white peg	
-
-			} else {
-				resultPegOne.Visible = false; //there are no pegs
-			}
-
-
+		public static int keepAboveZero(int value) { //constrain a value between 2
+			return (value > 0) ? value : 0;
 		}
+
+		public void displayResults(GuessResult res) {
+			int i = 0;
+			for (; i < Math.Floor((double) res.getRightColours() / 4); i++) {
+				resultDisplays[i].displayResults(4, keepAboveZero(res.getRightPlaces()-i*4));
+			}
+
+			if (res.getRightColours() % 4 != 0) {
+				resultDisplays[i].displayResults(res.getRightColours()%4, keepAboveZero(res.getRightPlaces()-i*4));
+			}
+		}
+
+		
 
 		[Description("Can the code be changed?"), Category("Data")]
 		public bool Active {
