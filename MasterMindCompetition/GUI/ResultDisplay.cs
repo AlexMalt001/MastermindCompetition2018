@@ -43,7 +43,7 @@ namespace MasterMindCompetition.GUI {
 				resultPegOne.Image = Resources.whiteResultPeg; //and has a white peg
 
 				//BLACK PEGS
-				if (rightPlaces == 4)  //if there are four successes
+				if (rightPlaces >= 4)  //if there are four successes
 					resultPegFour.Image = Resources.blackResultPeg; //black peg overwrites white peg
 				if (rightPlaces >= 3)  //if there are three or more successes
 					resultPegThree.Image = Resources.blackResultPeg; //black peg overwrites white peg
